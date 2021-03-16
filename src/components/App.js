@@ -1,6 +1,10 @@
 import React from 'react'
 import 'css/App.css'
+import {BrowserRouter as Router, Route, Link} from 'react-router-dom'
 import ProductList from 'components/ProductList'
+import PageHome from 'components/PageHome'
+import PageContact from 'components/PageContact'
+import PageAbout from 'components/PageAbout'
 
 const App = () => {
 
@@ -21,9 +25,9 @@ const App = () => {
 	]
 
 	return (
-		<>
+		<Router>
 			<header className="page-header">
-				<a href="index.html" className="logo">Hello World</a>
+				<Link to="/" className="logo">Hello World</Link>
 
 				<button type="button" className="nav-toggle">
 					<span className="material-icons">menu</span>
@@ -37,8 +41,8 @@ const App = () => {
 								<li><a href="#">Subcategory</a></li>
 							</ul>
 						</li>
-						<li><a href="#">About</a></li>
-						<li><a href="#">Contact</a></li>
+						<li><Link to="/about">About</Link></li>
+						<li><Link to="/contact">Contact</Link></li>
 					</ul>
 				</nav>
 
@@ -55,7 +59,11 @@ const App = () => {
 				</ul>
 			</header>
 
-			<ProductList products={productsAr} />
+			<Route exact path="/" component={PageHome} />
+			<Route path="/about" component={PageAbout} />
+			<Route path="/contact" component={PageContact} />
+			
+			{/* <ProductList products={productsAr} /> */}
 
 			<footer className="page-footer">
 				<ul className="social">
@@ -72,7 +80,7 @@ const App = () => {
 				</nav>
 				<p className="copyright">&copy; Copyright, 1991.</p>
 			</footer>
-		</>
+		</Router>
 	)
 }
 
