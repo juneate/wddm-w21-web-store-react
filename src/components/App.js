@@ -1,7 +1,7 @@
 import React from 'react'
 import 'css/App.css'
-import {BrowserRouter as Router, Route, Link} from 'react-router-dom'
-import ProductList from 'components/ProductList'
+import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom'
+import PageShop from 'components/PageShop'
 import PageHome from 'components/PageHome'
 import PageContact from 'components/PageContact'
 import PageAbout from 'components/PageAbout'
@@ -34,7 +34,7 @@ const App = () => {
 				</button>
 				<nav aria-label="Primary" className="navigation">
 					<ul className="menu">
-						<li><a href="#">Shop</a>
+						<li><Link to="/shop">Shop</Link>
 							<ul className="submenu">
 								<li><a href="#">Subcategory</a></li>
 								<li><a href="#">Subcategory</a></li>
@@ -59,11 +59,12 @@ const App = () => {
 				</ul>
 			</header>
 
-			<Route exact path="/" component={PageHome} />
-			<Route path="/about" component={PageAbout} />
-			<Route path="/contact" component={PageContact} />
-			
-			{/* <ProductList products={productsAr} /> */}
+			<Switch>
+				<Route exact path="/" component={PageHome} />
+				<Route path="/about" component={PageAbout} />
+				<Route path="/contact" component={PageContact} />
+				<Route path="/shop"><PageShop products={productsAr} /></Route>
+			</Switch>
 
 			<footer className="page-footer">
 				<ul className="social">
