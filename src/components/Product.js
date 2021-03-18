@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 import 'css/Product.css'
 
 const Product = ({data}) => {
@@ -10,7 +11,7 @@ const Product = ({data}) => {
     <article className="product" data-id={data.id}>
       <header>
         <img src={productImg} alt={data.name} />
-        <h3>{data.name}</h3>
+        <h3><Link to={`/product/${data.slug}`}>{data.name}</Link></h3>
         <data value="39"><del>$50.00</del> <ins>$39.00</ins></data>
         <p>Here is a shot of this product that might entice a user to click and add it to their cart.</p>
         <dl>

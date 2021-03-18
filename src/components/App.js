@@ -5,20 +5,24 @@ import PageShop from 'components/PageShop'
 import PageHome from 'components/PageHome'
 import PageContact from 'components/PageContact'
 import PageAbout from 'components/PageAbout'
+import PageProduct from 'components/PageProduct'
 
 const App = () => {
 
 	const productsAr = [
 		{
 			id: 1,
+			slug: `neon-pizza-sign`,
 			name: `Neon "Pizza" Sign`,
 			img: `henrique-hanemann-BYgiOBHq6Cs-unsplash.jpg`
 		}, {
 			id: 2,
+			slug: `round-mirror`,
 			name: `Round Mirror`,
 			img: `stacey-zinoveva-U9Divbch2kk-unsplash.jpg`
 		}, {
 			id: 3,
+			slug: `wooden-laptop-tray`,
 			name: `Wooden Laptop Tray`,
 			img: `xps-bXfQLglc81U-unsplash.jpg`
 		}
@@ -64,6 +68,7 @@ const App = () => {
 				<Route path="/about" component={PageAbout} />
 				<Route path="/contact" component={PageContact} />
 				<Route path="/shop"><PageShop products={productsAr} /></Route>
+				<Route path="/product/:slug"><PageProduct products={productsAr} /></Route>
 			</Switch>
 
 			<footer className="page-footer">

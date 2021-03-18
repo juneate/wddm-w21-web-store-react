@@ -38,5 +38,8 @@ module.exports = {
 		historyApiFallback: {
 			index: `index.html`
 		}
+	},
+	output: {
+		publicPath: `/`
 	}
 }
