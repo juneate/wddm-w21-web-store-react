@@ -3,7 +3,7 @@ import Product from 'components/Product'
 
 const ProductList = ({products}) => {
   
-  const allProducts = products.map((prod) => <Product key={prod.id} data={prod} />)
+  const allProducts = products.map((prod, i) => <Product key={prod.id} data={prod} style={(i%2) ? {transform: `rotate(180deg)`} : {}} />)
 
   return (
 
