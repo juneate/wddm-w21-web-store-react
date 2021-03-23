@@ -6,6 +6,7 @@ import PageHome from 'components/PageHome'
 import PageContact from 'components/PageContact'
 import PageAbout from 'components/PageAbout'
 import PageProduct from 'components/PageProduct'
+import Page404 from 'components/Page404'
 
 const App = () => {
 
@@ -69,6 +70,8 @@ const App = () => {
 				<Route path="/contact" component={PageContact} />
 				<Route path="/shop"><PageShop products={productsAr} /></Route>
 				<Route path="/product/:slug"><PageProduct products={productsAr} /></Route>
+				<Route path="*" component={Page404} />
+				{/* <Redirect to="/" /> */}
 			</Switch>
 
 			<footer className="page-footer">
