@@ -1,6 +1,7 @@
 import React from 'react'
 import 'css/App.css'
 import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom'
+import Header from 'components/Header'
 import PageShop from 'components/PageShop'
 import PageHome from 'components/PageHome'
 import PageContact from 'components/PageContact'
@@ -31,38 +32,7 @@ const App = () => {
 
 	return (
 		<Router>
-			<header className="page-header">
-				<Link to="/" className="logo">Hello World</Link>
-
-				<button type="button" className="nav-toggle">
-					<span className="material-icons">menu</span>
-				</button>
-				<nav aria-label="Primary" className="navigation">
-					<ul className="menu">
-						<li><Link to="/shop">Shop</Link>
-							<ul className="submenu">
-								<li><a href="#">Subcategory</a></li>
-								<li><a href="#">Subcategory</a></li>
-								<li><a href="#">Subcategory</a></li>
-							</ul>
-						</li>
-						<li><Link to="/about">About</Link></li>
-						<li><Link to="/contact">Contact</Link></li>
-					</ul>
-				</nav>
-
-				<form className="search">
-					<label>Search
-						<input type="search" name="find" id="find" />
-					</label>
-					<button type="button"><span className="material-icons">search</span></button>
-				</form>
-
-				<ul className="your-products">
-					<li><a href="#"><span className="material-icons" aria-label="Favourites">favorite_border</span></a></li>
-					<li><a href="#"><span className="material-icons" aria-label="Items in your cart">shopping_cart</span></a></li>
-				</ul>
-			</header>
+			<Header />
 
 			<Switch>
 				<Route exact path="/" component={PageHome} />
