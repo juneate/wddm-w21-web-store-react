@@ -1,5 +1,6 @@
 import React from 'react'
 import Product from 'components/Product'
+import {sortProducts, byPriceAsc, byPriceDesc, byRating} from 'hooks/sortProducts'
 import { Pagination } from 'antd'
 import 'antd/dist/antd.css'
 
@@ -7,6 +8,13 @@ const ProductList = ({products}) => {
   
   const allProducts = products.map((prod, i) => <Product key={prod.id} data={prod} style={(i%2) ? {transform: `rotate(180deg)`} : {}} />)
   // const [pageWereOn, setPageWereOn] = useState(1)
+
+
+	console.log(sortProducts(allProducts, byPriceAsc))
+	console.log(sortProducts(allProducts, byPriceDesc))
+	console.log(sortProducts(allProducts, byRating))
+
+
 
   return (
 
