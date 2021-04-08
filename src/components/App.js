@@ -2,12 +2,12 @@ import React from 'react'
 import 'css/App.css'
 import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom'
 import Header from 'components/Header'
-import PageShop from 'components/PageShop'
-import PageHome from 'components/PageHome'
-import PageContact from 'components/PageContact'
-import PageAbout from 'components/PageAbout'
-import PageProduct from 'components/PageProduct'
-import Page404 from 'components/Page404'
+import PageShop from 'pages/PageShop'
+import PageHome from 'pages/PageHome'
+import PageContact from 'pages/PageContact'
+import PageAbout from 'pages/PageAbout'
+import PageProduct from 'pages/PageProduct'
+import Page404 from 'pages/Page404'
 
 const App = () => {
 
