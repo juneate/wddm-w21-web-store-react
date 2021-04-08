@@ -1,8 +1,12 @@
-import React from 'react'
+import React, {useContext} from 'react'
+import ProductContext from 'contexts/product'
 import ProductList from 'components/ProductList'
 import ProductFilter from 'components/ProductFilter'
 
-const PageShop = ({products}) => {
+const PageShop = () => {
+
+  const products = useContext(ProductContext)
+
   return (
     <main className="products">
       <header className="heading">

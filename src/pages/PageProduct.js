@@ -1,10 +1,14 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import {useParams} from 'react-router-dom'
+import ProductContext from 'contexts/product'
 import Product from 'components/Product'
 
-const PageProduct = ({products}) => {
+  
+
+const PageProduct = () => {
 
   const {slug} = useParams()
+  const products = useContext(ProductContext)
 
 
   // Which product do I need to show here???

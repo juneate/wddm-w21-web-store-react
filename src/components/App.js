@@ -46,8 +46,8 @@ const App = () => {
 					<Route exact path="/" component={PageHome} />
 					<Route path="/about" component={PageAbout} />
 					<Route path="/contact" component={PageContact} />
-					<Route path="/shop"><PageShop products={productsAr} /></Route>
-					<Route path="/product/:slug"><PageProduct products={productsAr} /></Route>
+					<Route path="/shop" component={PageShop} />
+					<Route path="/product/:slug" component={PageProduct} />
 					<Route path="*" component={Page404} />
 					{/* <Redirect to="/" /> */}
 				</Switch>
