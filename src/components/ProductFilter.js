@@ -1,6 +1,27 @@
 import React from 'react'
+import {sortProducts, byPriceAsc, byPriceDesc, byRating} from 'hooks/sortProducts'
 
-const ProductFilter = () => {
+
+const ProductFilter = ({products, setProductResult}) => {
+
+  const handleSortProducts = (event) => {
+    switch (parseInt(event.target.value)) {
+      case 1:
+        setProductResult(sortProducts(products, byPriceAsc))
+        break;
+      case 2:
+        setProductResult(sortProducts(products, byPriceDesc))
+        break;
+      case 3:
+        setProductResult(sortProducts(products, byRating))
+        break;
+    }
+  }
+
+  // If you want to meet, send me a DM here in Collaborate and I'll set it up.
+
+
+
   return (
     <form className="filters">
       <h2>Filters</h2>
@@ -58,10 +79,11 @@ const ProductFilter = () => {
       </div>
       <fieldset>
         <label htmlFor="sort">Show</label>
-        <select name="sort" id="sort">
-          <option value="price-high">Price, highest to lowest</option>
-          <option value="price-low">Price, lowest to highest</option>
-          <option value="newest">Newest releases</option>
+        <select name="sort" id="sort" onChange={handleSortProducts} defaultValue={0}>
+          <option value={0} disabled>-- Sort by --</option>
+          <option value={1}>Price, lowest to highest</option>
+          <option value={2}>Price, highest to lowest</option>
+          <option value={3}>Newest releases</option>
         </select>
       </fieldset>
     </form>
