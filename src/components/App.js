@@ -1,5 +1,6 @@
 import React from 'react'
 import 'css/App.css'
+import 'material-design-icons/iconfont/material-icons.css'
 import ProductContext from 'contexts/product'
 import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom'
 import Header from 'components/Header'
@@ -19,7 +20,7 @@ const App = () => {
 			name: `Neon "Pizza" Sign`,
 			img: `henrique-hanemann-BYgiOBHq6Cs-unsplash.jpg`,
 			cost: 120.00,
-			rating: 4.4
+			rating: 3.8
 		}, {
 			id: 2,
 			slug: `round-mirror`,
@@ -52,7 +53,7 @@ const App = () => {
 					{/* <Redirect to="/" /> */}
 				</Switch>
 
-				<footer className="page-footer">
+				<footer className="page-footer ant-spin-container">
 					<ul className="social">
 						<li><a href="#"><span className="material-icons">face</span> Facebook</a></li>
 						<li><a href="#"><span className="material-icons">camera_alt</span> Instagram</a></li>

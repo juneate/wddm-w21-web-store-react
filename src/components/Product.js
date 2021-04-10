@@ -1,6 +1,5 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
-// import 'css/Product.css'
 
 const Product = ({data, style}) => {
   const productImg = require(`img/${data.img}`).default
@@ -8,29 +7,32 @@ const Product = ({data, style}) => {
   const styling = {
     product: {
       boxShadow: `0 0 0.5rem rgba(0, 0, 0, 0.5)`,
-      margin: `2em`,
+      margin: `2em 0`,
       padding: `1em`,
-      backgroundColor: `rgb(${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)})`
+      backgroundColor: `rgb(245,245,245)`
+    },
+    header: {
+      display: `grid`,
+      gridGap: `1em`,
+      gridTemplateColumns: `10em auto`
     },
     heading: {
       fontFamily: `system-ui, helvetica, arial, sans-serif`,
-      fontSize: `2em`,
+      fontSize: `1.2em`,
       color: `#222`
     }
   }
 
   return (
     <article className="product" data-id={data.id} style={{...style, ...styling.product}}>
-      <header>
+      <header style={styling.header}>
         <img src={productImg} alt={data.name} />
-        <h3><Link to={`/product/${data.slug}`} style={styling.heading}>{data.name}</Link></h3>
-        <data value="39"><del>$50.00</del> <ins>$39.00</ins></data>
-        <p>Here is a shot of this product that might entice a user to click and add it to their cart.</p>
-        <dl>
-          <dt>Rating</dt>
-          <dd>4.4 <span className="material-icons">star</span><span className="material-icons">star</span><span className="material-icons">star</span><span className="material-icons">star</span><span className="material-icons">star_half</span></dd>
-        </dl>
-        <a href="#">see more</a>
+        <div>
+          <h3><Link to={`/product/${data.slug}`} style={styling.heading}>{data.name}</Link> <small><output value={data.rating}>{data.rating} <span className="material-icons">star</span></output></small></h3>
+          <data value={data.cost}>${data.cost.toFixed(2)}</data>
+          <p>Description goes here.</p>
+          <Link to={`/product/${data.slug}`}>see more</Link>
+        </div>
       </header>
       {/* <form>
         <fieldset>

@@ -1,3 +1,23 @@
+.container {
+  padding: 0 1em;
+  margin: 0 auto;
+  max-width: 60em;
+}
+.page-header {
+  background-color: #222;
+  color: #fff;
+}
 .page-footer {
   background-color: #999;
+}
+.filters {
+  padding: 1em;
+  background-color: #eee;
+}
+.filter-list {
+  display: flex;
+  gap: 0.5em;
+}
+.subheading {
+  margin: 1rem;
 }
