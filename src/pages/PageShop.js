@@ -46,25 +46,10 @@ const PageShop = () => {
 
   }, [filters])
 
-  /* 
-  const handleSortProducts = (event) => {
-    switch (event.target.value) {
-      case `highest`:
-        setProductResult(sortProducts(products, byPriceAsc))
-        break;
-      case `lowest`:
-        setProductResult(sortProducts(products, byPriceDesc))
-        break;
-      case `rating`:
-        setProductResult(sortProducts(products, byRating))
-        break;
-    }
-  }
-  */
-
 
   return (
     <main className="products container">
+      
       <header className="heading">
         <h1>Sale on [Category Name]</h1>
       </header>
