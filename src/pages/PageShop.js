@@ -19,8 +19,6 @@ const PageShop = () => {
     
     // Creat a clone Array
     let filteredProducts = [...products]
-    console.log(`Filter updated`, filters, Number(filteredProducts[0].cost), Number(filteredProducts[0].cost) <= Number(filters.maxPrice))
-
 
     // Check all the filters
     if (filters.query)
