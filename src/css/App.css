@@ -21,3 +21,6 @@
 .subheading {
   margin: 1rem;
 }
+.page-header a {
+  color: white;
+}

@@ -1,6 +1,21 @@
-# Web Store
+# Web Store 
 
-## Getting started
+A web store application built using React JS.
+
+## Status
+
+### Deployment
+[![Netlify Status](https://api.netlify.com/api/v1/badges/24ec58c2-21ae-43c2-9d72-d0c83937d1a7/deploy-status)](https://app.netlify.com/sites/ecomm-site/deploys)
+
+### Lighthouse
+![Lighthouse Accessibility](assets/lighthouse_accessibility.svg)
+![Lighthouse Best Practices](assets/lighthouse_best-practices.svg)
+![Lighthouse Performance](assets/lighthouse_performance.svg)
+![Lighthouse SEO](assets/lighthouse_seo.svg)
+
+![Lighthouse Scores](assets/lighthouse.png)
+
+## Testing
 
 1. Install the project dependencies
    ```shell
@@ -11,28 +26,3 @@
    ```shell
    npm run start
    ```
-
-## Component map
-
-- App
-   - PageHome
-   - PageAbout
-   - PageContact
-   - PageShop
-      - ProductFilter
-      - ProductList
-         - [Product]
-         - Pagination
-
-
-## Paths
-
-- `/`: `PageHome`
-- `/shop`: `PageShop`
-   - `/shop/filter`
-- `/product/product-name`: `PageProduct`
-- `/about`: `PageAbout`
-
-<!-- 
-- Pages: Home, about, contact, shop
-   - Shop: categories? items? search results? -->
